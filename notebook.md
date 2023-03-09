@@ -31,4 +31,6 @@ script
 alert("hello")弹出   document.write(new Date()) console.log("hello")  f12在console中可见  
 编辑网页 记事本 edit编辑器文件 可视化（不大用）  
 文件的编辑保存和浏览 文件拓展为.html utf-8 编码 用浏览器打开  
-vscode技巧  ！+tab 各种tab  tab补全大部分格式和代码
+vscode技巧  ！+tab 各种tab  tab补全大部分格式和代码    
+一系列复杂的用法，骚的用法，要多写，多练，越快越好，还要有特效添加   超链接  图   
+内容结构化，内容与格式  live preview    f1选指令  table  文图表链
