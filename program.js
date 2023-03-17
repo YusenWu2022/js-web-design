@@ -75,6 +75,9 @@ function updateScoreBoard() {
     document.getElementById("lose").innerHTML = loseCount;
 }
 function clickHandler(button) {
+    for (var i = 0; i < 3; i++)
+        document.getElementsByTagName('img')[i].style.height = "100px"
+    button.style.height = "80px";
     var playerCheck = button.alt;
     var playerState = 0;
     if (playerCheck == "scissors")
