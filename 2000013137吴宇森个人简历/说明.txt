@@ -1,0 +1,7 @@
+html结构在introduction.html，css定义在style.css，另外有signal.jpg文件作为头像
+使用了课上提到的三种css选择器；
+试用了table结构来承载底部的链接；
+设置了不同位置的字体和颜色；
+为主要部分添加了hover改变颜色和边框，用after添加了emoji图标；
+引用在线css结构预设文件https://cdn.bootcdn.net/ajax/libs/font-awesome/5.11.2/css；
+底部添加了回到网页顶部的链接

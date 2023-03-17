@@ -33,4 +33,82 @@ alert("hello")弹出   document.write(new Date()) console.log("hello")  f12在co
 文件的编辑保存和浏览 文件拓展为.html utf-8 编码 用浏览器打开  
 vscode技巧  ！+tab 各种tab  tab补全大部分格式和代码    
 一系列复杂的用法，骚的用法，要多写，多练，越快越好，还要有特效添加   超链接  图   
-内容结构化，内容与格式  live preview    f1选指令  table  文图表链
+内容结构化，内容与格式  live preview    f1选指令  table  文图表链     
+嵌套： footer p 表示内部（？
+margin 边缘  右下左上   一个div会左右占满，float实现并排 after before
+
+
+javascript部分
+基础  
+网页图形文本链接之外的小程序  js是解释性语言  弥补html  
+浏览器虚拟机来解释 
+oak->java 
+livescript->javascript(ECMAScript)  ES5/ES6 
+网页运行 解释性 弱类型 基于对象   
+行为控制
+<script src="..."></script>  
+<script>alert(1990)</script>
+var n=1;
+var s="abc"
+var p ={name:"li",age:10};
+var ary=[4,5,6]
+var 区分大小写
+段落 function xxx(){...}
+html交互：获得dom对象，对象属性方法事件onclick onmouseover 周期setinteval(fun,100);
+<label for="guess"></label>
+全放到.container{box...}里面
+<input type="number" id="guess" min="1" max="100" >
+<button> onlick="checkGuess()">  联系  <script>...const guessInput = document.getElementById("guess");获得对象 const guess=parseInt(guessInput,10);
+function checkGuess(){...} const 常量
+css:input[type="number"]{xxx} button{...} p.result p.error <p class="error"> 直接写   
+... result = getElementById("xxx")document对象这是一个reference引用
+ result.classList.remove("error") 去除error内容  result.innerHTML = message;  绑定事件来调用 先得到再操作（改变样式或内容） 修改程序（先有模子）
+parseint("123",10);   10进制
+""+123
+document.write
+console.log(n);
+if for while...
+ 类似c系列和java  
+ html注释 <!-- --> css注释 /* */
+ number string boolean undefined     引用object array function  
+ 弱类型强制转换  
+ parseInt("123px",10) 123
+ parseInt parseInt("123.46")  124 
+ toString() 
+ isNaN()
+ !!a bool 类型
+ var x; let y; 变量常量 var不确定类型 
+ 特殊用法  
+ a||a"100px"
+ fun && func()
+ if fun not null then func()
+ 嵌入  a=100 s='value is ${a}'  单引号也行
+ 像python的 "x={y}"    
+ 语句后写分号也可以不写...? 乐（ 
+for(let i=0;i<=4;i++)
+innerHTML 就是当前显示的逐行  
+div{width:2px; height:50px; float:left;}  float 向左并排  
+hsl循环 
+for(...i...)
+<div style='background-color:hsl("+i+，100%，50%")'></div> 循环  
+把div弄成小球： div:{width:100px; height:100px;border_radius:50%; position:absolute;background-image:radius-gradient}
+计时器函数 ssetInteva(function(){...})匿名函数
+<script type="...">...
+任务分解 多写函数  
+有意思，感觉写html javascript脚本这种东西就跟实习brax的json yaml机制差不多
+添加组件（手动代码添加） d=document.createElement('div') createTextNode() 之后getElement 之后appendChild(d)    
+js核心：直接对对象操作：getElementBy...  也可以css查询 qsa  auerySelectorAll 
+odiv.style.cssText=...
+odiv.classList.add("")
+三要素属性方法事件
+onclick=函数名写到button上 script中get...onclick=函数名、匿名函数 
+addEventListener("click",fuction(e){}) 
+onmouseover onmouseout
+
+
+
+
+
+
+
+ 

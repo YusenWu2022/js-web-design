@@ -1,0 +1,87 @@
+
+
+.container{
+    display: grid;
+    box-shadow: 20px 20px 50px 20px lightgrey;
+    width: 900px;
+    margin: 200px auto;
+}
+.emoji{
+    width: 64px;
+    height: 64px;
+    background-position: -192px -128px !important;
+    background: url("assets/img/emoji_sprite.png");
+}
+.container>div{
+    margin-left: 30px;
+}
+
+.basic-info{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+#menu{
+    color:blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    color:gray
+}
+h2{
+    color:blue;
+    font-family: 'Courier New', Courier, monospace;
+}
+.work-info{
+    color:red
+}
+.skill-info{
+    width: 200px;
+}
+
+.picture{
+    width: 100%;
+    transform: translate(-40px,30px);
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer ul li {
+    list-style: none;
+    margin: auto;
+}
+
+.content{
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+
+div p:hover{
+    color: lightblue;
+}
+
+p:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-left: 10px solid #3ba518;
+    position: relative;
+    top: 2px;
+    left: 10px;
+}
+footer .fab{
+    color:black;
+    font-size: 40px;
+}
+
+footer ul {
+    display: flex;
+}
+
+
