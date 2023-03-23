@@ -103,9 +103,44 @@ odiv.classList.add("")
 三要素属性方法事件
 onclick=函数名写到button上 script中get...onclick=函数名、匿名函数 
 addEventListener("click",fuction(e){}) 
-onmouseover onmouseout
-
-
+onmouseover onmouseout   
+可以考虑添加点音乐  
+audio video 首批添加到的标签 src =' controls='' autoplay='' muted->autoplay  controls是调节音量 id=''
+第三方的js库  video.js plyr.js (as an import)
+make player yours  
+aria label
+object  embed flash  param
+矢量图不会失真，记住向量关键点的坐标 SVG格式    <svg>格式  <circle>  stroke 基本元素和结构元素  都是直接用svg作图而不是用图标
+表单form 含有多个input form action method input 
+表单申请和发送（账号密码交互这种） 用户填写并提交给服务器，就是常见的“是否重新发送表单”  
+表单： name method action 处理位置  
+接收信息的网页处理就是后端，受到并处理  
+<form action=".../...org/net method=="POST">
+<input type='...>  <type name='' checked>
+<input type='...' name='' value=..  
+text radio单选，checkbox 多选，
+reset submit button passward file hidden image  
+文件上传控件 <input type="file " > enctype多部份二进制 唯一标识序列号
+MIME标准编码方式   指定传文件的编码 text/html   
+input打天下，select下拉框选择 常规老古董网页，老古董界面NET   textarea select-option  textarea rows= name= cols= wrap=
+option checkbox 
+新的input控件 number range url email tel search color date ...  
+html5:
+<input type=''>  placeholder 提示信息 
+autocomplete='on''off'填入之前的 
+autofocus自动聚焦到焦点 
+input前面可以加label <label for="">  <input id=""> 方便用户点击 
+label对齐 table tr td 
+或者css直接写 label{display:inline-block;text-align;right;}  
+表单验证 form的onsubmit验证 true false 或者button的onclick验证成功之后调用form的submit    <input ... min= max= ><required > <pattern>匹配 <multiply>
+控件组  
+<fieldset>
+<legend>
+field 1a:<...><br>
+提供选项：
+<input... list="">
+<datalist id="">
+<option>
 
 
 

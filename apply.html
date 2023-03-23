@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>club application</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <audio src="golden_armada.wav" controls="controls"></audio>
+    <form name="myform" action="finish.html" method="get" enctype="multipart/form-data" onsubmit="return check()">
+        <fieldset>
+            <legend>club application table</legend>
+            <label for="userName">name:</label>
+            <input type="text" id="userName" name="userName" placeholder="Tom" autocomplete="on" required /><br />
+            <label for="sex">gender</label>:
+            <label for="sex">man</label>
+            <input type="radio" id="sex" name="sex" value="man" />
+            <label for="sex">woman</label>
+            <input type="radio" id="sex" name="sex" value="woman" />
+            <label for="sex">others</label>
+            <input type="radio" id="sex" name="sex" value="others" /><br />
+            <label for="age">age</label>
+            <input type="number" id="age" name="age" value="0" min=10 max=99 /><br />
+            <label for="text">college</label>:
+            <select name="college">
+                <option value="1">science</option>
+                <option value="2">chemistry</option>
+                <option value="3">biology</option>
+                <option value="4">phisics</option>
+                <option value="5">art</option>
+                <option value="6">math</option>
+            </select><br />
+            <label for="text">profession:</label>
+            <input type="text" id="major" name="major" placeholder="computer" /><br />
+            <label for="text">apply for job</label>:
+            <input type="text" id="major" name="major" list="jobs" /><br />
+            <datalist id="jobs">
+                <option>labor</option>
+                <option>lead</option>
+                <option>protect</option>
+                <option>weite</option>
+            </datalist>
+            <label for="number">phone number:</label>
+            <input type="tel" id="number" name="number" /><br />
+            <label for="email">post address:</label>
+            <input type="text" id="email" name="email" pattern="[A-Za-z0-9]+@[A-Za-z0-9].[A-Za-z0-9]++"
+                placeholder="123@github.com" /><br />
+            <label for="text">personal picture:</label>
+            <input type="file" name="personImage" /><br />
+            <input type="submit" value="submit" />
+            <input type="reset" value="reset" />
+            <input type="hidden" name="user" value="1" /><br />
+        </fieldset>
+    </form>
+    <script src="check.js"></script>
+</body>
+
+</html>
