@@ -143,6 +143,68 @@ field 1a:<...><br>
 <option>
 
 
+css3 复杂的效果，标准发展和统一 
+大部分浏览器都互相支持 
+浏览器前缀 webkit (chrone safari edge) moz(firefox) ms(IE trident ) -o- (presto Opera) autoprefixer 
+使用浏览器前缀的示例，组件加前缀直接调用  不支持css3就用js实现   
+属性选择器 兄弟选择器伪类选择器 伪元素  input[type="password"]  a[...href$='pdf],a[class='item'] 用于库
+div-img兄弟 
+相邻兄弟li+li  label+input  
+input:checked(...)
+input:checked+... 
+选中文字底色改成红色： ::select  
+装饰 布局交互动态效果 
+布局 盒模型 网格模型 动画
+filter 方法，滤镜等
+装饰  颜色 16进制 #RRGGBB 或#RGB RGBA alpha不透明度 rgb(0 255 0 / 50%)  HSL/A  hsl(240 100% 50%) hsla(240 100% 50% / 50%)
+shift+click 三种表达转换（换算）    
+色环  hsl写法 色调，饱和度，亮度 一般用的100% 50%  opacity   
+对话框，别人遮住一点变暗  打开对话框-开关关闭冰还原  
+<button onclick="openDialog()">open</button>
+<>框页面
+    <>
+    <div class=""closebtn> onclick=""closeDialog()">x</div>   用x来代表关闭按钮    
+    <div ... cover>
+    ...
+    <>
+<>
+重点：
+.cover{
+    opacity:3  
+    width height 100% 全部遮住（实际上变暗就是放了一层cover层在上面罢了  
+}
+.wrapper{
+    position:fixed 
+    z-index:1000
+    top:50% left:50% width:100px
+    margin-left:100px margin-top max-width padding中间距离关系
+}
+.closebtn{
+    position:absolute right:10px padding:5px cursor:pointer 
+}
+.content{
+    min-width: 100px 
+    min-height:...
+    width 
+    margin: 0px 
+}
+style="display:none"
+边框 border   
+阴影  box-shadow  rgba颜色透明度  文字阴影边框 和 定制按钮  
+图片的旋转 transform：rotate(7deg)  
+box-shadow: 20px 20px 20px #aaaaaa 
+transition: border-color .15s box-shadow .15s   
+背景 
+复杂的css可以一直写直到手动写出渐变色效果  
+特殊图片  linear-gradient背景作为图片输入处理 center 30% center 30% from...to...
+attachment 
+radial-gradient 滤镜渐变 css直接实现一定效果  
+repeating-radial-gradient 一些乱七八糟的构图功能 加渐变区块  
+sprite图小图标合并来减少网络的传输   sprite.css  应用工具，合成之后在屏幕上选定长图显示范围来选择   
+字体图标  font awesome link直接引用   
+changelog 很多很多各种用法，不过主要还是布局的熟练度得补一下，
+定义一个字体没有组件，就直接给它.before .after加一个content使用定义好的字体
+
 
 
 

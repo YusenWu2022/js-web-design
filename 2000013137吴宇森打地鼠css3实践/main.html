@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Whac-A-Mole </title>
+    <link rel="stylesheet" href="punch.css">
+</head>
+
+<body>
+
+    <section>
+        <svg width="600" height="200">
+            <circle cx="100" cy="20" r="30" fill="black"></circle>
+            <circle cx="200" cy="20" r="30" fill="black"></circle>
+            <circle cx="120" cy="70" r="5" fill="black"></circle>
+            <circle cx="180" cy="70" r="5" fill="black"></circle>
+            <circle cx="150" cy="100" r="70" fill="rgba(10,10,10,30%)"></circle>
+            <polygon points="150,70 130,95 170,95"></polygon>
+            <path d="M 150 0 L 150 00 M 0 100 L 300 100" stroke="black" stroke-width="0" />
+            <path d="M 100 100 A 50 50 0 0 0 200 100 " stroke="black" fill="black" />
+        </svg>
+    </section>
+    <span id="count">total score: 0</span>
+    <div id="knock"></div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="punch.js"></script>
+    <audio src="audio/golden_armada.wav" loop="true" controls="controls"></audio>
+    <div id="box">
+        <div>
+            <p>Congratulates for a 100-score!</p>
+            <input id="btnshow" type="button" value="x" onclick="closeBlock();" />
+        </div>
+    </div>
+</body>
+
+</html>
