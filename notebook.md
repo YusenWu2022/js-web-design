@@ -205,6 +205,16 @@ sprite图小图标合并来减少网络的传输   sprite.css  应用工具，�
 changelog 很多很多各种用法，不过主要还是布局的熟练度得补一下，
 定义一个字体没有组件，就直接给它.before .after加一个content使用定义好的字体
 
+动画设计，动态效果， 大部分靠css，不是插入视频而是直接对一个图标的transform和transition加速度和效果来重复播放   动画和过渡：动画多个关键帧 不需要实践 而过渡只有两个状态，要用事件激发 hover  动画直接.mydiv(animation: xxx 1s)   
+两层引用    
+slice-box slice-box:hover slice是用长条背景来操作显示区段  anim-image anim-image:hover anim是图片滑入滑出   
+animation time  
+subcontent mycheckbox 隐藏  线性渐变  transparent .nav .drop-down  drop-down-content  .nav a:hover    
+定位四大关键 display position float fixed   
+css3 布局   table表格和float:left以外的其他布局  
+flex布局 实现对齐 display:flex justify-content   align-items centter 主轴另轴对齐   
+table displlay:table-row table-cell   vertical-align middle table-cell 格子，功能更强  
+grid  
 
 
 
