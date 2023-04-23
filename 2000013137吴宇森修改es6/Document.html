@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)https://course.pku.edu.cn/bbcswebdav/pid-940435-dt-content-rid-5789560_1/courses/22232-00048-04834600-0006170251-00-1/guestbook.html -->
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Document</title>
+</head>
+
+<body>
+	姓名<input class="name">
+	留言<input class="message">
+	<button class="submit">加入</button>
+	<ul class="messageList"></ul>
+
+	<script>
+		(function () {
+			var msgs = new Map(); //使用Map数据结构
+			var msgs = new Array(100);
+			var count = 0; // 计数
+			var $ = sel => document.querySelector(sel); //选择器封装
+			function clickSettle() {
+				var [name, msg] = [$('.name').value, $('.message').value]; //解构
+				if (!name || !msg) return;
+				mags[count++] = [name, msg] // 加入数组中
+				listShow();  //展示
+				for (var x of [$('.name'), $('.message')])//for遍历
+				{
+					x.value = ''//清空文本框
+				}
+			}
+			function display() {
+				var items = [];
+				for (var i = 0; i < [...msgs].sort().length; i++) // index 遍历
+				{
+					items.push(`<li class="list-group-item">
+				${[...mags].sort()[i][0]}<span>说: </span>${[...mags].sort()[i][1]} 
+				</li>`); //模板字符串
+				}
+				$('.messageList').innerHTML = items.join('');
+			}
+			//提交信息
+			$('.submit').addEventListener("click", clickSettle);
+
+			//展示信息
+			var listShow = display
+		})();
+
+	</script>
+
+
+	<div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;">
+		<div id="trans-tooltip">
+			<div id="tip-left-top"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left-top.png&quot;);">
+			</div>
+			<div id="tip-top"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-top.png&quot;) repeat-x;">
+			</div>
+			<div id="tip-right-top"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right-top.png&quot;);">
+			</div>
+			<div id="tip-right"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right.png&quot;) repeat-y;">
+			</div>
+			<div id="tip-right-bottom"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right-bottom.png&quot;);">
+			</div>
+			<div id="tip-bottom"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-bottom.png&quot;) repeat-x;">
+			</div>
+			<div id="tip-left-bottom"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left-bottom.png&quot;);">
+			</div>
+			<div id="tip-left"
+				style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left.png&quot;);">
+			</div>
+			<div id="trans-content"></div>
+		</div>
+		<div id="tip-arrow-bottom"
+			style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-arrow-bottom.png&quot;);">
+		</div>
+		<div id="tip-arrow-top"
+			style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-arrow-top.png&quot;);">
+		</div>
+	</div>
+</body>
+
+</html>

@@ -211,10 +211,43 @@ slice-box slice-box:hover slice是用长条背景来操作显示区段  anim-ima
 animation time  
 subcontent mycheckbox 隐藏  线性渐变  transparent .nav .drop-down  drop-down-content  .nav a:hover    
 定位四大关键 display position float fixed   
-css3 布局   table表格和float:left以外的其他布局  
+css3 布局   table表格和float:left以外的其他布局   
 flex布局 实现对齐 display:flex justify-content   align-items centter 主轴另轴对齐   
 table displlay:table-row table-cell   vertical-align middle table-cell 格子，功能更强  
-grid  
+grid     
+
+
+json不能注释，作为存储和不同语言之间的桥梁
+函数一等公民  
+function func(x,y,x)
+{
+    if(x==undefined)
+}
+call调用（复杂系统）[].filter.call(...)过滤只对复杂对象使用
+apply传递数组形式的参数
+function.max.apply([...])   
+函数灵活  var x  let y    
+函数返回一个函数，如果里面用到外面的就会把外面的作为闭包处理起来  
+传递多个自由参数：args 数组拆开等  =>系列 运算符  ？fn(a,b)
+this的绑定 this随着进展自动绑定上下文 that    
+speak=function(){...}
+使用function作为对象来构造对象：原型链 对象也是函数
+特殊的继承方法   Person.aclipse.speak  
+es新版中的数组  延展运算符  fuction(...a) 代表a=[1,4,6]参数  [b,c]=a 对左边复制  [...1,...1]
+[age,name] = {...d}
+{...d,...{school:'pku'.score:90,age:20}}  
+math对象，math方法 字符串String对象  fromCharCode   
+ES6 新旧语法转换（js新版） 
+对象 var x={"a":"b","b":func(){...},x}键值对 面向对象，可以是函数
+ p.a p["a"] p[0]
+ for (var x in range)  
+ curing化，闭包实现部分求值   
+ prototype.constructor == Person  
+ new Speak().speak()  
+ ...prototype=person()
+ .slice .splice  
+ Dom对象  具体的环境对象 浏览器和文档对象
+ 
 
 
 

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- saved from url=(0127)https://course.pku.edu.cn/bbcswebdav/pid-940435-dt-content-rid-5789559_1/courses/22232-00048-04834600-0006170251-00-1/game.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #f1f1f1;
+        }
+    </style>
+
+</head>
+
+<body onload="startGame()"><canvas width="480" height="270"></canvas>
+    <script>
+
+        let myGamePiece;
+        let myObstacles = [];
+        let myScore;
+
+        function startGame() {
+            myGamePiece = new Component({ width: 30, height: 30, color: "red", x: 10, y: 120 });
+            myGamePiece.gravity = 0.05;
+            myScore = new Component({ width: "30px", height: "Consolas", color: "black", x: 280, y: 40, type: "text" });
+            myGameArea.start();
+        }
+
+        let myGameArea = {
+            canvas: document.createElement("canvas"),
+            start() {
+                this.canvas.width = 480;
+                this.canvas.height = 270;
+                this.context = this.canvas.getContext("2d");
+                document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                this.frameNo = 0;
+                this.interval = setInterval(updateGameArea, 20);
+            },
+            clear() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+        }
+        class Component {
+            constructor(options) {
+                this.type = options.type;
+                this.score = 0;
+                this.width = options.width;
+                this.height = options.height;
+                this.speedX = 0;
+                this.speedY = 0;
+                this.x = option.x;
+                this.y = option.y;
+                this.gravity = 0;
+                this.gravitySpeed = 0;
+            }
+            update() {
+                ctx = myGameArea.context;
+                if (this.type == "text") {
+                    ctx.font = this.width + " " + this.height;
+                    ctx.fillStyle = color;
+                    ctx.fillText(this.text, this.x, this.y);
+                } else {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+            }
+            newPos = async () => {
+                this.gravitySpeed += this.gravity;
+                this.x += this.speedX;
+                this.y += this.speedY + this.gravitySpeed;
+                this.hitBottom();
+            }
+            static hitBottom() {
+                let rockbottom = myGameArea.canvas.height - this.height;
+                if (this.y > rockbottom) {
+                    this.y = rockbottom;
+                    this.gravitySpeed = 0;
+                }
+            }
+            crashWith = async () => {
+                let myleft = this.x;
+                let myright = this.x + (this.width);
+                let mytop = this.y;
+                let mybottom = this.y + (this.height);
+                let otherleft = otherobj.x;
+                let otherright = otherobj.x + (otherobj.width);
+                let othertop = otherobj.y;
+                let otherbottom = otherobj.y + (otherobj.height);
+                let crash = true;
+                if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+                    crash = false;
+                }
+                return crash;
+            }
+        }
+        class TextComponent extends Component {
+            constructor(options) {
+                super(options);
+                this.type = "text";
+            }
+            update() {  // 因为必然是text所以不需要再判断分支
+                ctx = myGameArea.context;
+                ctx.font = this.width + " " + this.height;
+                ctx.fillStyle = color;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+        }
+
+        function updateGameArea() {
+            let x, height, gap, minHeight, maxHeight, minGap, maxGap;
+            for (i = 0; i < myObstacles.length; i += 1) {
+                if (myGamePiece.crashWith(myObstacles[i])) {
+                    return;
+                }
+            }
+            myGameArea.clear();
+            myGameArea.frameNo += 1;
+            if (myGameArea.frameNo == 1 || everyinterval(150)) {
+                x = myGameArea.canvas.width;
+                minHeight = 20;
+                maxHeight = 200;
+                height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
+                minGap = 80;
+                maxGap = 200;
+                gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+                myObstacles.push(new Component({ width: 10, height: height, color: "green", x: x, y: 0 }));
+                myObstacles.push(new Component({ width: 10, height: x - height - gap, color: "green", x: x, y: height + gap }));
+            }
+            for (i = 0; i < myObstacles.length; i += 1) {
+                myObstacles[i].x += -1;
+                myObstacles[i].update();
+            }
+            myScore.text = "SCORE: " + myGameArea.frameNo;
+            myScore.update();
+            myGamePiece.newPos();
+            myGamePiece.update();
+        }
+
+        function everyinterval(n) {
+            // 判断frameNo是不是整除n,不如用整数处理更直接
+            if (myGameArea.frameNo % n == 0)  // 判断是否整除
+                return true;
+            return false;
+        }
+
+        function accelerate(n) {
+            myGamePiece.gravity = n;
+        }
+    </script>
+    <br>
+    <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
+    <p>Use the ACCELERATE button to stay in the air</p>
+    <p>How long can you stay alive?</p>
+
+
+    <div style="position: static; width: 0px; height: 0px; border: none; padding: 0px; margin: 0px;">
+        <div id="trans-tooltip">
+            <div id="tip-left-top"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left-top.png&quot;);">
+            </div>
+            <div id="tip-top"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-top.png&quot;) repeat-x;">
+            </div>
+            <div id="tip-right-top"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right-top.png&quot;);">
+            </div>
+            <div id="tip-right"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right.png&quot;) repeat-y;">
+            </div>
+            <div id="tip-right-bottom"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-right-bottom.png&quot;);">
+            </div>
+            <div id="tip-bottom"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-bottom.png&quot;) repeat-x;">
+            </div>
+            <div id="tip-left-bottom"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left-bottom.png&quot;);">
+            </div>
+            <div id="tip-left"
+                style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-left.png&quot;);">
+            </div>
+            <div id="trans-content"></div>
+        </div>
+        <div id="tip-arrow-bottom"
+            style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-arrow-bottom.png&quot;);">
+        </div>
+        <div id="tip-arrow-top"
+            style="background: url(&quot;chrome-extension://aimfoaockjgdhaipifjjfkkbloeomobi/imgs/map/tip-arrow-top.png&quot;);">
+        </div>
+    </div>
+</body>
+
+</html>
