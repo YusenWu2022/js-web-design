@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用css+checkbox来实现的点击效果</title>
+    <style>
+        .mycheckbox { display: none;}
+        .subcontent{ background: #eee; padding-left:30px;}
+        .mycheckbox~.subcontent{ display: none;}
+        .mycheckbox:checked~.subcontent{ display: block; transition: .3s;} /* ~ 表示后面的兄弟元素 */
+
+        /* 下面实现箭头效果, 关于Unicode可查表，如 https://unicode-table.com/cn/sets/arrow-symbols/ */
+        .arrow{font-style:normal;}
+        .arrow:after{ content:'\25BC' }
+        .mycheckbox:checked~.arrow:after{ content:'\25B2'}
+    </style>
+</head>
+<body>
+    <h3>使用css+checkbox来实现的点击效果</h3>
+    
+    <label for="checkbox1">第一章 点击这里展开或收缩下面的内容</label>
+    <input type="checkbox" id="checkbox1" class="mycheckbox"/>
+    <i class="arrow"></i>
+    <div class="subcontent">第一节 first ha ha!</div>
+    <div class="subcontent">第二节 second ha ha!</div>
+    <div class="subcontent">第三节 third ha ha!</div>
+    
+    <div>这是别的内容</div>
+
+</body>
+</html>

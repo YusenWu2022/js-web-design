@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery效果示例</title>
+	<style type="text/css">
+	p{ background-color: yellow; border: dotted red 1px; 
+		height: 60px; width:200px;}
+	button{ display: block; width: 150px; }
+	.hide{ display: none; }
+	</style>
+</head>
+
+<body>
+	<button class="one">不用callback</button> 
+	<p class="a">这是文字</p>
+	<p class="b hide">这是另一段文字</p>
+
+	<button class="two">用callback</button> 
+	<p class="c">这是文字</p>
+	<p class="d hide">这是另一段文字</p>
+
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){
+			$("button.one").on("click", function(){
+				$("p.a").hide(1000);
+				$("p.b").slideDown(); //不用callback
+			});	
+			
+			$("button.two").on("click", function(){
+				$("p.c").hide(1000, function(){ //使用callback
+					$("p.d").slideDown();
+				});
+			});
+
+		});
+	</script>
+</body>
+
+</html> 

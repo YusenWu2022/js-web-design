@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉式导航栏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav-wrapper {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav li {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .nav {
+            position: relative;
+        }
+
+        .nav li div {
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            display: none;
+            text-align: center;
+            height: 200px;
+            line-height: 200px;
+        }
+
+        .nav li:nth-child(1) div {
+            background-color: aqua;
+        }
+
+        .nav li:nth-child(2) div {
+            background-color: bisque;
+        }
+
+        .nav li:nth-child(3) div {
+            background-color: blueviolet;
+            display: block;
+        }
+
+        .nav li:nth-child(4) div {
+            background-color: darkorange;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <li>
+                <a href="#">学校概况</a>
+                <div>这是学校概况具体内容</div>
+            </li>
+            <li>
+                <a href="#">招生与资助</a>
+                <div>这是招生与资助具体内容</div>
+            </li>
+            <li>
+                <a href="#">院系设置</a>
+                <div>这是院系设置具体内容</div>
+            </li>
+            <li>
+                <a href="#">科学研究</a>
+                <div>这是科学研究具体内容</div>
+            </li>
+        </ul>
+
+        这里是后面的正文
+
+    </div>
+
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $(".nav li").on("mouseover", function () {
+                $(".nav li div").hide();  //所有子div都hide
+                $(this).children("div").show(); //当前的show
+            }).on("mouseout", function () {
+                $(".nav li div").css("display", "none");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

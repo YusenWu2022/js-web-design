@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>使用index</title>
+	<style> a{cursor:hand;} </style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){ 
+			$("ul li").html("aaaa");
+			
+			$("ul li").each(function(idx,ele){
+				$(this).html("这是第"+idx+"项");
+			});
+
+			$("ul li").on("click", function(){
+				alert("您点击了" + $(this).index() );
+				alert("您点击了" + $("ul li").index( $(this)) );
+				alert("您点击了" + $("ul li").index( this ) );
+				alert(this.tagName);
+			});
+
+		});
+	</script>
+</body>
+</html>

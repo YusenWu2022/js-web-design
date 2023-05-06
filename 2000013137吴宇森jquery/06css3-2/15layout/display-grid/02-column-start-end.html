@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>display-grid</title>
+	<style>
+		.wrapper{margin: 20px;font-size: 20px;color: #fff;background-color: #963297;}
+		.wrapper>div {margin: 5px;text-align: center;background-color: #c99702;}
+
+		.wrapper {
+			display: grid;
+			grid-template-columns: 200px 50px 100px;
+			grid-template-rows: 200px 60px;
+		}
+		.wrapper>div:nth-child(1) {
+			grid-column-start: 1;
+			grid-column-end: 3; /* 注意，end是不包括的。试试改成4，对后面的内容的影响。 */
+		}
+		.wrapper>div:nth-child(3) {
+			grid-row: 2 / 4;   /* 这是start/end简写法 */
+		}
+		.wrapper>div:nth-child(4) {
+			grid-column-start: 2;
+			grid-column-end: 4;
+		}
+
+	</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用margin:auto</title>
+	<style>
+	div{
+		width: 400px;
+		height: 400px;
+		position: relative;
+		border: 1px solid #465468;
+	}
+	img{
+		position: absolute;
+		margin: auto auto; /* 这是关键 */
+		top: 0; /* 这几个也重要，或者指定子对象的宽高 */
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="http://placehold.it/200x100">
+	</div>
+</body>
+</html>

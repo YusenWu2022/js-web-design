@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<style>
+	#mydiv{color:red;}
+	</style>
+</head>
+<body>
+	<div id="mydiv"></div>
+
+
+	<script src="jquery.js"></script>
+	<script>
+		$( function(){ 
+			$("#mydiv").html("hello");  //没有获到，不会出错
+			//alert("hello jquery!");
+		});
+
+
+	</script>
+
+	<div></div>
+</body>
+</html>

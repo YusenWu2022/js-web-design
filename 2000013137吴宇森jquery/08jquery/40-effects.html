@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery效果示例</title>
+	<style type="text/css">
+	p{ background-color: yellow; border: dotted red 1px; 
+		height: 60px; width:200px;}
+	button{ display: block; width: 150px;  margin: 20px; }
+	.hide{ display: none; }
+	</style>
+</head>
+
+<body>
+	<button class=sh>show</button>
+	<p class="hide">这是文字</p>
+	<button class=hd>hide</button>
+	<p>这是文字</p>
+	<hr>
+	<button class=tg>toggle</button>
+	<p>这是文字</p>
+
+	<button class=su>slideUp</button>
+	<p>这是文字</p>
+	<button class=sd>slideDown</button>
+	<p class="hide">这是文字</p>
+	<button class=st>slideToggle</button>
+	<p>这是文字</p>
+
+
+	<button class=fi>fadeIn</button>
+	<p class="hide">这是文字</p>
+	<button class=fo>fadeOut</button>
+	<p>这是文字</p>
+
+	<button class=an>animate</button>
+	<p>这是文字</p>
+
+
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){
+			$("button").before("<hr/>");
+
+
+			$("button.sh").on("click", function(){
+				$(this).next().show();
+			});
+			$("button.hd").on("click", function(){
+				$(this).next().hide();
+			});
+			$("button.tg").on("click", function(){
+				$(this).next().toggle();
+			});
+
+			$("button.su").on("click", function(){
+				$(this).next().slideUp('slow');
+			});
+			$("button.sd").on("click", function(){
+				$(this).next().slideDown(2000);
+			});			
+			$("button.st").on("click", function(){
+				$(this).next().slideToggle(2000);
+			});	
+
+			$("button.fi").on("click", function(){
+				$(this).next().fadeIn('slow');
+			});
+			$("button.fo").on("click", function(){
+				$(this).next().fadeOut(5000);
+			});			
+
+			$("button.an").on("click", function(){
+				$(this).next().animate(
+					{opacity:0.3, width:"400px"}, 3000);
+			});			
+
+		});
+	</script>
+</body>
+
+</html> 

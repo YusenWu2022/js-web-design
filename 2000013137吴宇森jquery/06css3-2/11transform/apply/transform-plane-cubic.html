@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="zh-cn"> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>多个平面构成立方体</title> 
+	<style type="text/css"> 
+		* { 
+			margin: 0; 
+			padding: 0; 
+			list-style: none; 
+		} 
+		body { 
+			padding-top: 100px; 
+		} 
+		.box { 
+			margin: 0 auto 0; 
+			width: 300px; 
+			height: 500px; 
+			position: relative; 
+		} 
+		.box .topBox { 
+			position: absolute; 
+			width: 300px; 
+			height: 150px; 
+			border: 1px solid #ccc; 
+			top: 0; 
+			left:107px; 
+			background-color: yellow; 
+			transform: skew(-55deg,0); 
+			font-size: 100px; 
+			text-align: center; 
+		} 
+		.box .topBox02{ 
+			position: absolute; 
+			width: 300px; 
+			height: 260px; 
+			border: 1px solid #ccc; 
+			border-top: none; 
+			top: 152px; 
+			left: 0; 
+			background-color: green; 
+		} 
+		.box .topBox03{ 
+			position: absolute; 
+			width: 214px; 
+			height: 260px; 
+			border: 1px solid #ccc; 
+			border-top: none; 
+			border-left: none; 
+			top: 76px; 
+			left: 302px; 
+			background-color: blue; 
+			transform: skew(0,-35deg); 
+		} 
+		.box .topBox04 { 
+			position: absolute; 
+			width: 300px; 
+			height: 150px; 
+			border: 1px solid #ccc; 
+			top: 260px; 
+			left:107px; 
+			transform: skew(-55deg,0); 
+		} 
+		.box02 { 
+			transform: scale(0.5,0.5) translate(455px,-838px); 
+		} 
+		.box03 { 
+			transform: scale(0.2,0.2) translate(1671px, -4354px); 
+		} 
+		.box .topBox05 { 
+			position: absolute; 
+			width: 300px; 
+			height: 260px; 
+			border-left: 1px solid #ccc; 
+			top: 0; 
+			left:214px; 
+		} 
+	</style> 
+</head> 
+<body> 
+	<div class="box"> 
+		<div class="topBox"></div> 
+		<div class="topBox02"></div> 
+		<div class="topBox03"></div> 
+		<div class="topBox04"></div> 
+		<div class="topBox05"></div> 
+	</div> 
+	<div class="box box02"> 
+		<div class="topBox"></div> 
+		<div class="topBox02"></div> 
+		<div class="topBox03"></div> 
+		<div class="topBox04"></div> 
+		<div class="topBox05"></div> 
+	</div> 
+	<div class="box box03"> 
+		<div class="topBox"></div> 
+		<div class="topBox02"></div> 
+		<div class="topBox03"></div> 
+		<div class="topBox04"></div> 
+		<div class="topBox05"></div> 
+	</div> 
+</body> 
+</html> 

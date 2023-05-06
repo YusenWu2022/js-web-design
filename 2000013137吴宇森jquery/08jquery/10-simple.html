@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>简单的jQuery示例</title>
+</head>
+
+<body>
+	<p>点击此处，它就会隐藏。</p>
+	<p>这是另一段。</p>
+
+
+	<script src="jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+				//$("p").hide();
+			});
+		});
+	</script>
+
+</body>
+
+</html> 

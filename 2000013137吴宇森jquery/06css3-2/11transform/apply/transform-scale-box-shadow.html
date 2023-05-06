@@ -1,0 +1,37 @@
+<!DOCTYPE html> 
+<html lang="zh-cn"> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>transform与box-shadow</title> 
+	<style> 
+		.test li:hover{border-color:#999;background-color:#bbb;color:#999;} 
+		.text{ 
+			margin:5px; background:#FFF; height:250px; width:200px; border:1px solid #CCC;
+			float:left;  
+			transition: all .5s ease-out
+		} 
+		.text:hover{ 
+			box-shadow:0 0 10px #CCCCCC;
+			transform:scale(1.05);
+			transition: .3s;
+		} 
+	</style> 
+</head> 
+<body> 
+	<div class="text"> 
+		<p>课程1</p> 
+	</div> 
+	<div class="text"> 
+		<p>课程2</p> 
+	</div> 
+	<div class="text"> 
+		<p>课程3</p> 
+	</div> 
+	<div class="text"> 
+		<p>课程4</p> 
+	</div> 
+	<div class="text"> 
+		<p>课程5</p> 
+	</div> 
+</body> 
+</html> 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片放大效果</title>
+	<style type="text/css">
+		.wrapper{ 
+			overflow: hidden;
+			position: relative;
+		}
+		.wrapper:hover img{
+			transform: scale(1.2);
+		}	
+		
+		.wrapper img{
+			display: block;	
+			transition: 1s;
+			width:400px;
+ 		}
+
+
+ 		.wrapper .desc{
+ 			position: absolute;
+			bottom: 10px;
+			left: 0px;
+			background-color: rgba(0,0,0,0.8);
+			color: #fff;
+			transition: all 1s ease .1s;
+ 		}
+		.wrapper:hover .desc{
+			bottom: 30px;
+			transform: translate( 100px, -50px);
+		}
+
+	</style>
+</head>
+<body>
+	
+	<div class="wrapper">
+		<img src="https://www.pku.edu.cn/dat/img/f369cdc0d4ca4068b0ad3501d9be4e28.jpg" >
+
+		
+		<div class="desc">北京大学全球传播</div>
+	</div>
+	请用鼠标指向图片
+</body>
+</html>

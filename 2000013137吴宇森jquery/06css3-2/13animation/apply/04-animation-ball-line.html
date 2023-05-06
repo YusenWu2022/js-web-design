@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>用小球作动画分割线</title>
+        <style type="text/css">
+        	.linewrapper{
+ 				font-size: 20px;
+        		width:6em;
+        		margin: 0 auto;
+        	}        	
+        	.line{
+        		position: relative;
+        	}
+			.ball{
+				position: absolute;
+				border-radius: 50%; 
+				width: 1em; height: 1em;
+				background-color: #333;
+			}
+			.ball0{ left: 0em; }
+			.ball1{ left: 1em; }
+			.ball2{ left: 2em; }
+			.ball3{ left: 3em; }
+			.ball4{ left: 4em; }
+			.ball5{ left: 5em; }
+
+			@keyframes leftball{
+				0%{
+					left: -4em;					
+				}
+				25%,75%{
+					left: 0em;
+				}
+				100%{
+					left: -4em;					
+				}
+			}
+			@keyframes rightball{
+				0%{
+					left: 5em;					
+				}
+				50%{
+					left: 9em;
+				}
+				75%{
+					left: 5em;
+				}
+				100%{
+					left: 5em;
+				}
+			}
+			.ball:first-child{ 	
+				animation: leftball 1.5s infinite; 
+			}
+			.ball:last-child{ 
+				animation: rightball 1.5s infinite; 
+			}
+        </style>
+    </head>
+    <body>
+    <div class="linewrapper">
+    <div class="line">
+    	<div class="ball ball0"></div>
+    	<div class="ball ball1"></div>
+    	<div class="ball ball2"></div>
+    	<div class="ball ball3"></div>
+    	<div class="ball ball4"></div>
+    	<div class="ball ball5"></div>
+    </div>
+    </div>
+    </body>
+</html>

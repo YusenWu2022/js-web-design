@@ -246,7 +246,23 @@ ES6 新旧语法转换（js新版）
  new Speak().speak()  
  ...prototype=person()
  .slice .splice  
- Dom对象  具体的环境对象 浏览器和文档对象
+ Dom对象  具体的环境对象 浏览器和文档对象    
+
+ JQuery
+ document的形式指定一些内容  
+ $(document)....
+ $('button).on("click",function(){$('p').toggle(1000)})     $选中所有符合的内容  
+ function(){$('p').css("...")}   指定css格式   
+ $('.div').each(function(index,element){...}) 
+ $(...).css()
+ $(...).index()  
+ $('#firstpane p.menu_head:eq(0)').show();
+ ...click(function(){
+     $(this).addClass('current').next('...')  
+                                .siblings().removeClass("...")
+    $('.content).hide().eq($(this).index().show())
+ })
+ 链式操作
  
 
 

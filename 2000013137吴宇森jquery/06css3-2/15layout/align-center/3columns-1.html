@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用float</title>
+	<style>
+	.container{
+		width: 100%;
+		border: 1px solid #379;
+	}
+	.clearfix::after{
+		content:'';
+		clear:both;
+		display:table;
+	}
+	.left{
+		float: left;
+		width: 100px;
+		height: 400px;
+		background-color: aqua;
+	}
+	.right{
+		float: right;
+		width: 100px;
+		height: 400px;
+		background-color: beige;
+	}
+	.middle{
+		background-color: salmon;
+	}
+	</style>
+</head>
+<body>
+	<div class="container clearfix">
+		<div class="left">
+		</div>
+		<div class="right">
+		</div>
+		<div class="middle">  <!-- 注意这个放到最后 -->
+		    BFC 也就是常说的块格式化上下文，这是一个独立的渲染区域，规定了内部如何布局，
+并且这个区域的子元素不会影响到外面的元素，其中比较重要的布局规则有内部 box 垂
+直放置，计算 BFC 的高度的时候，浮动元素也参与计算，触发 BFC 的规则有根元素，
+浮动元素，position 为 absolute 或 fixed 的元素，display 为 inline-block，table-cell，
+table-caption，flex，inline-flex，overflow 不为 visible 的元素
+		</div>
+	</div>	
+</body>
+</html>

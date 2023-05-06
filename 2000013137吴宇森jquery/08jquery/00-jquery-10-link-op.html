@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery链式操作</title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<div class="mydiv"></div>
+	<div class="mydiv"></div>
+	<div class="mydiv"></div>
+
+	<script type="text/javascript">
+	$(function(){
+		$(".mydiv")
+			.html("hello")
+			.css("color","red")
+			.css("font-size", "18px")
+			.on("click", function(){alert("ok"); } )
+			.on("mouseover", function(){ 
+				$(this).css("background", "yellow"); 
+				//$(".mydiv").css("background", "yellow");
+			} )
+			.on("mouseout", function(){ 
+				$(this).css ("background", "white"); 
+			} )
+		;
+	});
+	</script>
+
+</body>
+</html>

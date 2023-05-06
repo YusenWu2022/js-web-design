@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>使用字体图标</title>
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome-animation/0.1.0/font-awesome-animation.css">
+        <style>
+			div{ color: #222;  font-size: 24pt; margin:10pt;}
+			i[class*="fa"]{ font-size: 36pt; }
+			.red{ color:red; }
+			.blue{ color:blue; }
+
+        </style>
+
+    </head>
+    <body>
+	<div>
+	<span style="font-family:宋体">中abc</span>
+	<span style="font-family:黑体">中abc</span>
+	<span style="font-family:楷体">中abc</span>
+	<span style="font-family:Wingdings">中abc</span>
+	</div>
+
+	<div>
+    <i class="fa fa-signal fa-3"></i>
+    <em class="fa fa-signal fa-4"></em>
+    <i class="fa fa-anchor red"></i>
+    <i class="fa fa-android blue"></i>
+    <i class="fa fa-address-card red"></i>
+    </div>
+
+	<div>
+	<i class="fa fa-spinner faa-spin animated"></i>     
+	<i class="fa fa-spinner faa-spin animated-hover"></i>     
+	<i class="fa fa-bell faa-ring animated"></i>     
+	<i class="fa fa-bell faa-ring animated-hover"></i>     
+	</div>
+
+	<div class="faa-parent animated-hover">
+	<i class="fa fa-bell faa-ring"></i> 这里是整个父对象的hover    
+	</div>
+
+    </body>
+</html>

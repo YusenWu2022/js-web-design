@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>简单的jQuery scroll示例</title>
+	<style>
+	*{margin: 0}
+	
+	#divData{ background-color: yellow; 
+		position:fixed; width:100%; font-size:24px;}
+	.content{ background-color: aqua;  height: 3000px;}
+	</style>
+</head>
+
+<body>
+	<div id="divData">
+		aaaaaaaaa<br/>bbbbbbb</br>
+		<span id="info">&nbsp;</span>
+	</div>
+	<div class="content">
+	</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+<script>
+$(function(){
+	//加点内容
+	for(var i=0; i<100; i++) {
+		$(".content").append("<p>"+i+"</p>");
+	}
+
+	$(window).on("scroll", function(){
+		//求出content的滚动位置
+		//var top = $(".content").position().top; //这句比较坑，在早期版本的jquery中可以，在新的jquery中不行
+		var top = $(window).scrollTop(); //这句可以，或用 document.documentElement.scrollTop
+
+		$("#info").html("content top: " + top );
+		
+		//根据滚动位置，改变字体大小
+		var fontsize = "24px";
+		if( top>100 ) fontsize = "12px";
+		$('#divData').css("font-size", fontsize);
+	});
+});
+</script>
+
+</body>
+
+</html> 

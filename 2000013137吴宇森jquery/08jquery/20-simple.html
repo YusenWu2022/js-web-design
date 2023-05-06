@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>简单的jQuery示例</title>
+</head>
+
+<body>
+	<p>请输入一个数<input id="myText" /></p>
+	<p><button onclick="calcu()">计算</button></p>
+	<div id="divData"></div>
+	<div class="MyLoading"><img src="images/loading.gif" width=100 /></div>
+
+	<p></p>
+	<p></p>
+
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+function calcu()
+{
+     $('#divData').html("Generating");
+     $('.MyLoading').show();
+	 var n = parseInt($('#myText').val(),10);
+
+
+     var s = 0;
+     for (var i = 0; i<= n; i++)s += i; //计算1加到n
+
+     $('#divData').html("Result is " + s);
+     $('.MyLoading').hide();
+}
+</script>
+
+</body>
+
+</html> 

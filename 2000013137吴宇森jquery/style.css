@@ -1,0 +1,163 @@
+p {
+    background-color: lightgray;
+    border: dotted green 1px;
+    height: 40px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.good{
+    background-color: white;
+    border: dotted red 1px;
+    height: 60px;
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: large;
+}
+
+button {
+    display: block;
+    width: 150px;
+    margin: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.nav li {
+    display: inline-block;
+    width: 150px;
+}
+
+.nav {
+    position: relative;
+}
+
+.nav li div {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    display: none;
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+}
+
+.nav li:nth-child(1) div {
+    background-color: lightgreen;
+}
+
+.nav li:nth-child(2) div {
+    background-color: greenyellow;
+}
+
+.nav li:nth-child(3) div {
+    background-color: green;
+    display: block;
+}
+
+.nav li:nth-child(4) div {
+    background-color: darkgreen;
+}
+
+#box div{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 10px;
+	text-align: right;
+    display:block
+}
+#box{
+    display:none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    background-color: rgba(221, 221, 221, 0.5);
+    z-index: 9;
+}
+
+html, body {
+    position: relative;
+    height: 100%;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+.swiper-container {
+    /*width: 100%;
+    height: 100%;
+    */
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{ 
+    overflow: hidden;
+    position: relative;
+}
+.wrapper:hover img{
+    transform: scale(1.2);
+}	
+
+.wrapper img{
+    display: block;	
+    transition: 1s;
+    width:400px;
+ }
+
+
+ .wrapper .desc{
+     position: absolute;
+    bottom: 10px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    transition: all 1s ease .1s;
+ }
+.wrapper:hover .desc{
+    bottom: 30px;
+    transform: translate( 100px, -50px);
+}

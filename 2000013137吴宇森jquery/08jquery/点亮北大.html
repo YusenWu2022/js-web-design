@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>点亮北大</title>
+  <style>
+	.container{ margin: 0 auto; max-width: 720px; }
+	.clear::after{clear:both; display: block; content:"";}
+	h1{color: #94070A; text-align: center;} /*北大红 */
+
+	.pic{ position:relative; margin:10px;}
+	.pic img{ display:block; width:100%;}
+	.pic img:nth-child(1){ z-index: 1; }
+	.pic img:nth-child(2){ z-index: 2; position:absolute; top:0px; left:0px;}
+
+  </style>
+ </head>
+ <body>
+
+<div class="container clear">
+	<h1>点亮北大</h1>
+	
+	<div class="pic clear">
+		<img src="https://mmbiz.qpic.cn/mmbiz_jpg/qfMmVoEgEk0iaJOv1asQlqgL5BkKsehUGvo7V8A0g7ywENwLXafhxMLmicUqvBmspDLcNOLsFibO9jpC3TzbMue8Q/640?wx_fmt=jpeg
+" alt="">
+		<img src="https://mmbiz.qpic.cn/mmbiz_jpg/qfMmVoEgEk0iaJOv1asQlqgL5BkKsehUGHxNsbkRiclWo9B5VaFM3OUKfCFSo2Y7qS2jx0HDaDJ7K3iavdOWia0zSQ/640?wx_fmt=jpeg
+" alt="">
+	</div>
+	<div class="pic clear">
+		<img src="https://mmbiz.qpic.cn/mmbiz_jpg/qfMmVoEgEk0iaJOv1asQlqgL5BkKsehUGpicWHWXJH0Hlz6s8KVvOVyR5b6t5lVFOjRhdAINLlYVKYZXVvXMM2pQ/640?wx_fmt=jpeg" alt="">
+		<img src="https://mmbiz.qpic.cn/mmbiz_jpg/qfMmVoEgEk0iaJOv1asQlqgL5BkKsehUGZH2kqN5ia0iaicUYDQI6feaibMdHKDNnjyfxicUHcwgBmhxPibVtPslsdicyw/640?wx_fmt=jpeg" alt="">
+	</div>
+
+</div>
+
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+	<script>
+	$(function(){
+		$(".pic img:nth-of-type(even)").on("click", function(){
+			$(this).animate({"opacity":0}, 3000);
+		});
+	});
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+		/*  ---- 一般性定义 --- */
+		*{ 
+			padding: 0;
+			margin: 0;
+		}
+        ul{
+            list-style: none;
+        }
+        ul a{
+            display: block;
+            text-decoration: none;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            background-color: #8c0000;
+        }
+
+		/* ---- 下拉菜单相关 ---- */
+        .nav>li{
+            float: left;
+        }
+        .nav .drop-down{
+            position: relative;/* 这个定位方式很重要*/
+        }
+        .nav .drop-down-content{
+            display: none; /* 开始不显示 */
+            position: absolute; /* 这个定位方式很重要*/
+			transition: 0.3s;
+        }
+        .nav .drop-down:hover .drop-down-content{
+            display: block; /* hover以后显示出来 */
+        }
+        .nav a:hover{
+            background-color:#bf000b; /* 加点美化及过渡 */
+			transition: 0.3s;
+        }
+
+        
+		/*   ---- 其他 ----- */
+        h3{
+            font-size: 30px;
+            clear: both;
+        }
+
+</style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="drop-down">
+			<a href="#">上网指南</a>
+            <ul class="drop-down-content">
+                <li><a href="#">开户流程</a></li>
+                <li><a href="#">上网方式</a></li>
+                <li><a href="#">网络设置</a></li>
+                <li><a href="#">冻结账户</a></li>
+            </ul>
+        </li>
+        <li class="drop-down">
+			<a href="#">下拉菜单</a>
+            <ul class="drop-down-content">
+                <li><a href="#">我是1</a></li>
+                <li><a href="#">我是2</a></li>
+                <li><a href="#">我是3</a></li>
+            </ul>
+        </li>
+        <li class="drop-down">
+			<a href="#">下拉菜单</a>
+            <ul class="drop-down-content">
+                <li><a href="#">我是1</a></li>
+                <li><a href="#">我是2</a></li>
+                <li><a href="http://www.com/aaa.html#ch5">我是3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">等等</a></li>
+    </ul>
+    <h3>我是测试文字</h3>
+
+    <a name="ch5"></a>
+</body>
+</html>

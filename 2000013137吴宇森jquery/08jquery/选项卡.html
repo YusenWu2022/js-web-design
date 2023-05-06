@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>选项卡</title>
+	<script src="jquery.js"></script>
+
+	<style>
+		*{box-sizing: border-box;}
+
+		.tab{
+			margin:0;padding:0;width:600px;overflow:hidden;
+			background:#ccc; color:#000;
+		}
+		.tab li{
+			border:none; 
+			float:left; list-style:none; cursor:pointer;
+			padding: 3px 20px; height:30px;  
+			text-align:center; line-height:30px; 
+		}
+		.tab li.cur{background:#fff; cursor:default;
+			border-radius: 7px 7px 0 0; 
+			border: 1px solid #ccc; border-bottom: none;
+		}
+		.tabwrapper div{
+			margin:0;padding:10px; width:600px;height:400px;
+			border:1px solid #ccc; border-top: none;
+			display:none; /* 隐藏 */
+		}		
+		.tabwrapper div.on{display:block;}  /* 显示 */
+		</style>
+	</head>
+	<body>
+
+		<div class="tabwrapper">
+			<ul class="tab">
+				<li>最新</li>
+				<li class="cur">热门</li>
+				<li>新闻</li>
+			</ul>
+			<div class="content">1111111</div>
+			<div class="content on">2222222222</div>
+			<div class="content">3333</div>
+		</div>
+
+		<script>
+			$(function(){ 
+
+				$(".tab li").click(function(){
+					$(this).addClass("cur")
+						.siblings().removeClass("cur");
+						
+					$(".content").hide()
+						.eq($(this).index()).show();
+
+				});
+			});
+		</script>
+	</body>
+	</html>
